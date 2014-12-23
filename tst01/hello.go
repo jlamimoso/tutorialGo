@@ -14,6 +14,10 @@ const (
 )
 
 func main() {
+	emp := func(id int) funcionario.Dados {
+		return funcionario.Pessoal[id]
+	}
+
 	fmt.Printf(stringutil.Reverse("987654321") + "\n")
 	fmt.Println("comparar", p1, " > ", p2, " -> ", misc.Comp(p1, p2))
 	x, y := misc.Swap("teste", "mimoso")
@@ -23,6 +27,11 @@ func main() {
 	fmt.Printf("Quando e %s ? %s\n", dia.String(), misc.WhenIs(dia))
 	id := 4
 	fmt.Println("Quem e o ID ", id, "? ", funcionario.GetFunc(id))
+	fmt.Println("Quem e o ID ", id, "? ", emp(id))
+
+	D := &funcionario.Dados{}
+	fmt.Println("Quem e o ID(1) ", id, "? ", D.GetFunc1(id))
+
 	fmt.Println("Qual o depto do ", id, "? ", funcionario.GetDepto(id))
 
 	i := 0

@@ -6,7 +6,7 @@ type Dados struct {
 
 var (
 	Depto   = []string{"depto1", "depto2", "depto3", "depto4"}
-	pessoal = map[int]Dados{
+	Pessoal = map[int]Dados{
 		1: {"func1", "End1", "Depto1"},
 		2: {"func2", "End2", "Depto2"},
 		3: {"func3", "End3", "Depto3"},
@@ -15,8 +15,12 @@ var (
 	}
 )
 
+func (D *Dados) GetFunc1(id int) Dados {
+	return Pessoal[id]
+}
+
 func GetFunc(id int) Dados {
-	return pessoal[id]
+	return Pessoal[id]
 }
 
 func GetDepto(id int) string {
